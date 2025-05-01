@@ -1,5 +1,5 @@
 import React from 'react';
-import "./CartMessage.scss";
+import "./CartMessage.css";
 import { correct } from "../../utils/images";
 
 const CartMessage = () => {

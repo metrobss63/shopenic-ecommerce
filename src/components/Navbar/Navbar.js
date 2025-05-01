@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Navbar.scss";
+import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSidebarOn } from '../../store/sidebarSlice';
@@ -29,7 +29,7 @@ const Navbar = () => {
         setLoading(false); // Once categories are fetched, set loading to false
       }
     };
-    
+
     fetchData();
   }, [dispatch, categories.length]); // Dependency on dispatch and categories.length to rerun the effect when categories change
 
@@ -65,16 +65,16 @@ const Navbar = () => {
           </div>
 
           <ul className='navbar-nav flex align-center fs-12 fw-4 font-manrope'>
-          {
-  // Taking only first 8 categories
-  categories.slice(0, 8).map((category, idx) => (
-    <li className='nav-item no-wrap' key={idx}>
-      <Link to={`category/${category.slug}`} className='nav-link text-capitalize'>
-        {category.name.replace("-", " ")} {/* Replace "-" with space in the category name */}
-      </Link>
-    </li>
-  ))
-}
+            {
+              // Taking only first 8 categories
+              categories.slice(0, 8).map((category, idx) => (
+                <li className='nav-item no-wrap' key={idx}>
+                  <Link to={`category/${category.slug}`} className='nav-link text-capitalize'>
+                    {category.name.replace("-", " ")} 
+                  </Link>
+                </li>
+              ))
+            }
 
           </ul>
         </div>

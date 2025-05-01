@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import "./SearchPage.scss";
+import "./SearchPage.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { STATUS } from '../../utils/status';

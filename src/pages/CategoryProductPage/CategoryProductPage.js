@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import "./CategoryProductPage.scss";
+import "./CategoryProductPage.css";
 import ProductList from "../../components/ProductList/ProductList";
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';

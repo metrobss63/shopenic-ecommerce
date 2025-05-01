@@ -1,0 +1,203 @@
+:root {
+  --clr-orange: #DC3545;
+  --clr-white: #ffffff;
+  --clr-light: #f5f5f5;
+  --clr-black: #222;
+  --clr-gray: #ccc;
+  --clr-whitesmoke: #f4f4f4;
+  --font-family-poppins: 'Poppins', sans-serif;
+  --font-family-manrope: 'Manrope', sans-serif;
+  --transition-ease: all 0.3s ease;
+}
+
+/* Page Layout */
+.product-single-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .product-single-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Image Styles */
+.product-img-zoom {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.product-img-thumbs {
+  gap: 1rem;
+}
+
+.thumb-item {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border: 1px solid var(--clr-gray);
+  border-radius: 6px;
+}
+
+/* Product Details */
+.product-details .title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.product-details .para {
+  margin: 1rem 0;
+  color: #555;
+}
+
+.vert-line {
+  width: 1px;
+  height: 20px;
+  background-color: #ddd;
+  margin: 0 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  margin-right: 1rem;
+}
+
+.discount {
+  margin-left: 1rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.qty .qty-text {
+  font-weight: 500;
+}
+
+.qty-change button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
+  padding: 0.8rem 1.6rem;
+  font-size: 1.6rem;
+  border-radius: 4px;
+  transition: var(--transition-ease);
+}
+
+.btn:hover {
+  background-color: #DC3545;
+}
+#DC3545
+/* Utility Classes */
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bg-whitesmoke {
+  background-color: var(--clr-whitesmoke);
+}
+
+.text-orange {
+  color: var(--clr-orange);
+}
+
+.bg-orange {
+  background-color: var(--clr-orange);
+}
+
+.font-manrope {
+  font-family: var(--font-family-manrope);
+}
+
+.font-poppins {
+  font-family: var(--font-family-poppins);
+}
+
+.fw-3 {
+  font-weight: 300;
+}
+.fw-5 {
+  font-weight: 500;
+}
+.fw-6 {
+  font-weight: 600;
+}
+.fs-12 {
+  font-size: 1.2rem;
+}
+.fs-13 {
+  font-size: 1.3rem;
+}
+.fs-14 {
+  font-size: 1.4rem;
+}
+.fs-15 {
+  font-size: 1.5rem;
+}
+.fs-20 {
+  font-size: 2rem;
+}
+.fs-24 {
+  font-size: 2.4rem;
+}
+.ls-1 {
+  letter-spacing: 1px;
+}
+.mx-1 {
+  margin: 0 0.5rem;
+}
+.mx-2 {
+  margin: 0 1rem;
+}
+.mx-3 {
+  margin: 0 1.5rem;
+}
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.my-4 {
+  margin: 4rem 0;
+}
+.py-5 {
+  padding: 5rem 0;
+}
+
+
+
+.thumb-item {
+  width: 60px;
+  height: 60px;
+  margin: 0 6px;
+  border: 1px solid var(--clr-gray);
+  transition: border 0.3s;
+}
+
+.thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-item:hover {
+  border-color: var(--clr-orange);
+}
+
+.thumb-item.active-thumb {
+  border: 2px solid var(--clr-orange);
+}
+

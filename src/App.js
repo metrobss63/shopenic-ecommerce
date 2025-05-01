@@ -1,4 +1,4 @@
-import './App.scss';
+import './App.css';
 // react router v6
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 // pages

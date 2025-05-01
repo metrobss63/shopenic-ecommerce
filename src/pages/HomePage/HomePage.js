@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./HomePage.scss";
+import "./HomePage.css";
 import HeaderSlider from "../../components/Slider/HeaderSlider";
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllCategories } from '../../store/categorySlice';
@@ -70,36 +70,30 @@ const HomePage = () => {
             </div>
 
             {categories.length > 0 && (
-              <>
-                <div className='categories-item'>
-                  <div className='title-md'>
-                    <h3>{categories[0].name}</h3> {/* Access name property */}
-                  </div>
-                  {productStatus === STATUS.LOADING ? <Loader /> : <ProductList products={catProductsOne} />}
-                </div>
-
-                <div className='categories-item'>
-                  <div className='title-md'>
-                    <h3>{categories[1].name}</h3> {/* Access name property */}
-                  </div>
-                  {productStatus === STATUS.LOADING ? <Loader /> : <ProductList products={catProductsTwo} />}
-                </div>
-
-                <div className='categories-item'>
-                  <div className='title-md'>
-                    <h3>{categories[2].name}</h3> {/* Access name property */}
-                  </div>
-                  {productStatus === STATUS.LOADING ? <Loader /> : <ProductList products={catProductsThree} />}
-                </div>
-
-                <div className='categories-item'>
-                  <div className='title-md'>
-                    <h3>{categories[3].name}</h3> {/* Access name property */}
-                  </div>
-                  {productStatus === STATUS.LOADING ? <Loader /> : <ProductList products={catProductsFour} />}
-                </div>
-              </>
+              <div className="horizontalCategoryCards">
+                {categories.slice(0, 4).map((category, idx) => {
+                  const productLists = [catProductsOne, catProductsTwo, catProductsThree, catProductsFour];
+                  return (
+                    <div className="categoryCard" key={category.name}>
+                      <div className="cardHeader">
+                        <h3>{category.name}</h3>
+                      </div>
+                      {productStatus === STATUS.LOADING ? (
+                        <div className="loaderWrapper"><Loader /></div>
+                      ) : (
+                        <ul className="productPreviewList">
+                          {productLists[idx].slice(0, 3).map((product, i) => (
+                            <li key={i}>{product.name}</li> // replace with custom mini preview if needed
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             )}
+
+
           </div>
         </div>
       </div>

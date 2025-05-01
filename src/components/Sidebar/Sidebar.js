@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Sidebar.scss";
+import "./Sidebar.css";
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getSidebarStatus, setSidebarOff } from '../../store/sidebarSlice';

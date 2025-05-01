@@ -1,0 +1,145 @@
+.navbar {
+  background-color: var(--primary-color, #DC3545);
+  padding: 1rem 2rem;
+  font-family: 'Manrope', sans-serif;
+}
+
+.navbar-cnt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.navbar .navbar-brand {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-brand-ico {
+  font-size: 1.6rem;
+}
+
+.sidebar-show-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar-show-btn:hover {
+  opacity: 0.8;
+}
+
+.navbar-collapse {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.navbar-search {
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.navbar-search .form-control {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 0.9rem;
+  outline: none;
+  color: #333;
+  caret-color: #DC3545;
+}
+
+.navbar-search .form-control::placeholder {
+  font-size: 13.5px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.search-btn {
+  background-color: #DC3545;
+  width: 50px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 8px;
+  margin-left: 32px;
+}
+
+.nav-item {
+  white-space: nowrap;
+}
+
+.nav-link {
+  
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: capitalize;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.85;
+}
+
+.navbar-cart {
+  position: relative;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+
+.cart-btn {
+  position: relative;
+  color: white;
+}
+
+.cart-items-value {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #fff;
+  color: #DC3545;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-btn:hover .cart-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive: hide search on mobile */
+@media screen and (max-width: 576px) {
+  .navbar-search {
+    display: none;
+  }
+}
+
+/* Responsive: hide nav links under 992px */
+@media screen and (max-width: 992px) {
+  .navbar-nav {
+    display: none;
+  }
+}

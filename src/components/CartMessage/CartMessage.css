@@ -1,4 +1,4 @@
-.cart-message{
+.cart-message {
     padding: 2rem;
     position: fixed;
     top: 50%;
@@ -8,15 +8,15 @@
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 3px;
+}
 
-    .cart-message-icon{
-        margin-bottom: 1.7rem;
-        img{
-            width: 45px;
-            height: 45px;
-            margin-right: auto;
-            margin-left: auto;
-        }
-    }
-    
+.cart-message .cart-message-icon {
+    margin-bottom: 1.7rem;
+}
+
+.cart-message .cart-message-icon img {
+    width: 45px;
+    height: 45px;
+    margin-right: auto;
+    margin-left: auto;
 }

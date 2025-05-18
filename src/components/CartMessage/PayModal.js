@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./AuthModal.module.css";
 
 const AuthModal = ({ amount, onCloseModal }) => {
-  const walletAddress = "xxxxxxxxxxxxxxxxxxxxxx";
+  const walletAddress = "bc1qjufyn5tz93s89fz7regxx9s830xkzp2mar0hlv";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(walletAddress);

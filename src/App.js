@@ -6,7 +6,7 @@ import { Home, CategoryProduct, ProductSingle, Cart, Search } from "./pages/inde
 
 import LoginScreen from "./pages/AuthPage/Login";
 import SignupScreen from "./pages/AuthPage/Signup";
-
+import InstallBanner from './components/PWA';
 // components
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -66,6 +66,7 @@ function App() {
           </LayoutWrapper>
         </BrowserRouter>
       </Provider>
+      <InstallBanner />
     </div>
   );
 }

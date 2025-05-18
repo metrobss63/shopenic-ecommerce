@@ -1,0 +1,68 @@
+.privacy-policy {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fafafa;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Hero Banner */
+.hero {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 4rem 1rem;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color:#DC3545
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color:#DC3545
+}
+
+/* Content Container */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.policy-section {
+    margin-bottom: 2.5rem;
+    background: white;
+    padding: 1.8rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.policy-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.policy-section p,
+.policy-section li {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.policy-section ul {
+    padding-left: 1.3rem;
+    list-style-type: disc;
+}
+
+.policy-section a {
+    color: #0072ff;
+    text-decoration: none;
+}
+
+.policy-section a:hover {
+    text-decoration: underline;
+}

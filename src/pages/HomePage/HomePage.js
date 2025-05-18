@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import "./HomePage.css";
-import HeaderSlider from "../../components/Slider/HeaderSlider";
+import React, { useEffect, useMemo } from 'react';
+import './HomePage.css';
+import HeaderSlider from '../../components/Slider/HeaderSlider';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllCategories } from '../../store/categorySlice';
-import ProductList from "../../components/ProductList/ProductList";
+import ProductList from '../../components/ProductList/ProductList';
 import { fetchAsyncProducts, getAllProducts, getAllProductsStatus } from '../../store/productSlice';
-import Loader from "../../components/Loader/Loader";
 import { STATUS } from '../../utils/status';
+import shuffle from 'lodash.shuffle';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -14,87 +14,50 @@ const HomePage = () => {
   const products = useSelector(getAllProducts);
   const productStatus = useSelector(getAllProductsStatus);
 
-  const [loading, setLoading] = useState(true);
+  const isLoading = productStatus === STATUS.LOADING;
 
   useEffect(() => {
-    // Fetch products asynchronously
-    const fetchData = async () => {
-      await dispatch(fetchAsyncProducts(50)); // Fetch products
-    };
-
-    fetchData();
-
-    // Set loading to false when categories are loaded
-    if (categories.length > 0) {
-      setLoading(false);
+    if (productStatus === STATUS.IDLE) {
+      dispatch(fetchAsyncProducts(50));
     }
-  }, [dispatch, categories]); // Trigger re-fetch when categories change
+  }, [dispatch, productStatus]);
 
-  // Randomizing the products
-  const tempProducts = [];
-  if (products.length > 0) {
-    for (let i in products) {
-      let randomIndex = Math.floor(Math.random() * products.length);
 
-      while (tempProducts.includes(products[randomIndex])) {
-        randomIndex = Math.floor(Math.random() * products.length);
-      }
-      tempProducts[i] = products[randomIndex];
-    }
-  }
 
-  // Filter products by category (only proceed if categories are available)
-  let catProductsOne = categories[0] ? products.filter(product => product.category === categories[0].name) : [];
-  let catProductsTwo = categories[1] ? products.filter(product => product.category === categories[1].name) : [];
-  let catProductsThree = categories[2] ? products.filter(product => product.category === categories[2].name) : [];
-  let catProductsFour = categories[3] ? products.filter(product => product.category === categories[3].name) : [];
+  const shuffledProducts = useMemo(() => {
+    return products.length ? shuffle(products) : [];
+  }, [products]);
 
-  // Show loading message while data is fetching
-  if (loading || productStatus === STATUS.LOADING) {
-    return <div>Loading...</div>;
-  }
+
+
+  const categorizedProducts = useMemo(() => {
+    if (!categories.length || !products.length) return [];
+    return categories.slice(0, 4).map((cat) =>
+      products.filter((p) => p.category === cat.name).slice(0, 3)
+    );
+  }, [categories, products]);
 
   return (
     <main>
       <div className='slider-wrapper'>
         <HeaderSlider />
       </div>
+
       <div className='main-content bg-whitesmoke'>
         <div className='container'>
-          <div className='categories py-5'>
-            <div className='categories-item'>
-              <div className='title-md'>
-                <h3>See our products</h3>
+          {isLoading ? (
+            <></>
+          ) : (
+            <div className='categories py-5'>
+              <div className='categories-item'>
+                <div className='title-md'>
+                  <h3>See our products</h3>
+                </div>
+
+                <ProductList products={shuffledProducts} />
               </div>
-              {productStatus === STATUS.LOADING ? <Loader /> : <ProductList products={tempProducts} />}
             </div>
-
-            {categories.length > 0 && (
-              <div className="horizontalCategoryCards">
-                {categories.slice(0, 4).map((category, idx) => {
-                  const productLists = [catProductsOne, catProductsTwo, catProductsThree, catProductsFour];
-                  return (
-                    <div className="categoryCard" key={category.name}>
-                      <div className="cardHeader">
-                        <h3>{category.name}</h3>
-                      </div>
-                      {productStatus === STATUS.LOADING ? (
-                        <div className="loaderWrapper"><Loader /></div>
-                      ) : (
-                        <ul className="productPreviewList">
-                          {productLists[idx].slice(0, 3).map((product, i) => (
-                            <li key={i}>{product.name}</li> // replace with custom mini preview if needed
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-
-
-          </div>
+          )}
         </div>
       </div>
     </main>
@@ -104,3 +67,59 @@ const HomePage = () => {
 export default HomePage;
 
 
+
+
+
+
+
+
+
+const dta = {
+  availabilityStatus: "In Stock",
+  brand: "Essence",
+
+  category: "beauty",
+
+  description: "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+
+  dimensions: {
+    depth: 22.99,
+    height: 13.08,
+    width: 15.14,
+  },
+
+  discountPercentage: 10.48,
+  id: 1,
+  images: ['https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp'],
+
+
+  meta: {
+    barcode: "5784719087687",
+    createdAt: "2025-04-30T09:41:02.053Z",
+    qrCode: "https://cdn.dummyjson.com/public/qr-code.png",
+    updatedAt: "2025-04 - 30T09: 41:02.053Z",
+  },
+
+  minimumOrderQuantity: 48,
+  price: 9.99,
+  rating: 2.56,
+  returnPolicy: "No return policy",
+  reviews: [{
+    comment: "Would not recommend!",
+    date: "2025-04-30T09:41:02.053Z",
+    rating: 3,
+    reviewerEmail: "eleanor.collins@x.dummyjson.com",
+    reviewerName: "Eleanor Collins",
+  }],
+
+  shippingInformation: "Ships in 3-5 business days",
+  sku: "BEA-ESS-ESS-001",
+  stock: 99,
+  tags: ["beauty", "mascara"],
+
+  thumbnail: "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+  title: "Essence Mascara Lash Princess",
+  warrantyInformation: "1 week warranty",
+  weight: 4
+
+}

@@ -54,6 +54,9 @@ const ProductSinglePage = () => {
     dispatch(setCartMessageOn(true));
   };
 
+
+
+
   return (
     <main className='py-5 bg-whitesmoke'>
       <div className='product-single'>
@@ -113,9 +116,9 @@ const ProductSinglePage = () => {
                     <div className='new-price fw-5 font-poppins fs-24 text-orange'>
                       {formatPrice(discountedPrice)}
                     </div>
-                    <div className='discount bg-orange fs-13 text-white fw-6 font-poppins'>
+                    {/*<div className='discount bg-orange fs-13 text-white fw-6 font-poppins'>
                       {product?.discountPercentage}% OFF
-                    </div>
+                  </div>*/}
                   </div>
                 </div>
 
@@ -142,9 +145,7 @@ const ProductSinglePage = () => {
                     <i className='fas fa-shopping-cart'></i>
                     <span className='btn-text mx-2'>add to cart</span>
                   </button>
-                  <button className='buy-now btn mx-3'>
-                    <span className='btn-text'>buy now</span>
-                  </button>
+                  
                 </div>
               </div>
             </div>

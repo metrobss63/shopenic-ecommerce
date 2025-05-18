@@ -3,6 +3,9 @@ import "./CartModal.css";
 import { shopping_cart } from '../../utils/images';
 import { formatPrice } from '../../utils/helpers';
 
+
+
+
 const CartModal = ({carts}) => {
   return (
     <div className='cart-modal'>
@@ -13,7 +16,7 @@ const CartModal = ({carts}) => {
             {
               carts.map(cart => {
                 return (
-                  <div className='cart-modal-item grid align-center font-manrope py-2' key = {cart.id}>
+                  <div className='cart-modal-item grid align-center font-manrope py-2' key = {cart._id}>
                     <div className='cart-modal-item-img'>
                       <img src = {cart?.thumbnail} alt = "" className='img-cover' />
                     </div>

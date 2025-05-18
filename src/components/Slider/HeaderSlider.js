@@ -19,14 +19,14 @@ const HeaderSlider = () => {
 
   return (
     <div className='slider'>
-      <div className='container'>
+      <div className='containers'>
         <div className='slider-content overflow-x-hidden'>
           <Slider {...settings}>
             <div className='slider-item'>
-              <img src = {sliderImgs[0]} alt = "" />
+              <img src = {sliderImgs[1]} alt = "" style={{width:'100%'}}/>
             </div>
             <div className='slider-item'>
-              <img src = {sliderImgs[1]} alt = "" />
+              <img src = {sliderImgs[1]} alt = ""  style={{width:'100%'}} />
             </div>
           </Slider>
         </div>

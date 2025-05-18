@@ -8,9 +8,8 @@ const ProductList = ({products}) => {
       {
         products.map(product => {
           let discountedPrice = (product.price) - (product.price * (product.discountPercentage / 100));
-
           return (
-            <Product key = {product.id} product = {{...product, discountedPrice}} />
+            <Product key = {product._id} product = {{...product, discountedPrice}} />
           )
         })
       }

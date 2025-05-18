@@ -11,10 +11,11 @@ const Product = ({ product }) => {
   }, []);
 
   return (
-    <Link to={`/product/${product?.id}`} key={product?.id} className="product-link">
+    <Link to={`/product/${product?._id}`} key={product?.id} className="product-link">
       <div className="product-item" data-aos="fade-up">
         <div className="category">{product?.category}</div>
         <div className="product-item-img">
+          <p>name of product</p>
           <img className="img-cover" src={product?.images[0]} alt={product.title} />
         </div>
         <div className="product-item-info">
@@ -26,7 +27,7 @@ const Product = ({ product }) => {
           <div className="price">
             <span className="old-price">{formatPrice(product?.price)}</span>
             <span className="new-price">{formatPrice(product?.discountedPrice)}</span>
-            <span className="discount">({product?.discountedPercentage}% Off)</span>
+            {/*<span className="discount">({product?.discountedPercentage}% Off)</span>*/}
           </div>
         </div>
       </div>

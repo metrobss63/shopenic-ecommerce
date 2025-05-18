@@ -78,3 +78,59 @@
     border-bottom: 1px solid #eee;
   }
   
+
+
+
+
+  .thumb-item {
+    width: 60px;
+    height: 60px;
+    margin: 0 6px;
+    border: 1px solid var(--clr-gray);
+    transition: border 0.3s;
+  }
+  
+  .thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .thumb-item:hover {
+    border-color: var(--clr-orange);
+  }
+  
+  .thumb-item.active-thumb {
+    border: 2px solid var(--clr-orange);
+  }
+  .navbar-loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+
+
+  /* Add to HomePage.css or Loader.css */
+.loaderWrapperInline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+
+
+
+  .globalLoaderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    min-height: 300px;
+  }
+  

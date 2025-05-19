@@ -17,6 +17,14 @@
 }
 
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+
 
 input::placeholder {
   font-family: 'Manrope', sans-serif;
